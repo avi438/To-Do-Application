@@ -1,0 +1,137 @@
+/* General styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Input and button styling */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+button.edit {
+  background-color: #2196f3;
+  color: white;
+}
+
+button.delete {
+  background-color: #f44336;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Task list styling */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+li.complete {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 10px;
+}
+
+/* Deletion animation */
+@keyframes slideOut {
+  0% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+      transform: translateX(-100%);
+      opacity: 0;
+  }
+}
+
+li.deleting {
+  animation: slideOut 0.3s ease;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .container {
+      padding: 15px;
+  }
+
+  input[type="text"] {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  input[type="text"] {
+      font-size: 12px;
+  }
+
+  button {
+      font-size: 12px;
+  }
+}
